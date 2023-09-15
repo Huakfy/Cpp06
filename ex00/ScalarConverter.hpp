@@ -6,7 +6,7 @@
 /*   By: mjourno <mjourno@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 12:26:05 by mjourno           #+#    #+#             */
-/*   Updated: 2023/09/14 11:32:39 by mjourno          ###   ########.fr       */
+/*   Updated: 2023/09/15 12:34:46 by mjourno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 
 # include <string>
 # include <iostream>
-# include <stdlib.h>
+# include <iomanip>
+# include <limits>
+# include <cmath>
 
 class ScalarConverter {
 	public:
