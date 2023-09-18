@@ -31,13 +31,38 @@ ScalarConverter::~ScalarConverter() {
 	std::cout << "useless in this execise" << std::endl;
 }
 
-void	exceptions(std::string str) {
+static void	exceptions(std::string str) {
 	if (str == "-inff" || str == "-inf")
-		std::cout << "char: impossible\nint: impossible\nfloat: -inff\ndouble: -inf" << std::endl;
+		std::cout << "char:	impossible\nint:	impossible\nfloat:	-inff\ndouble:	-inf" << std::endl;
 	else if (str == "+inff" || str == "+inf")
-		std::cout << "char: impossible\nint: impossible\nfloat: +inff\ndouble: +inf" << std::endl;
+		std::cout << "char:	impossible\nint:	impossible\nfloat:	+inff\ndouble:	+inf" << std::endl;
 	else if (str == "nanf" || str == "nan")
-		std::cout << "char: impossible\nint: impossible\nfloat: nanf\ndouble: nan" << std::endl;
+		std::cout << "char:	impossible\nint:	impossible\nfloat:	nanf\ndouble:	nan" << std::endl;
+}
+
+static void	print(bool ok[4], char c, int i, float f, double d) {
+	//print
+	if (ok[0] && i >= 0 && i <= 127)	//char
+	{
+		if (isprint(c) && c == i)
+			std::cout << "char:	'" << c << "'";
+		else
+			std::cout << "char:	Non displayable";
+	}
+	else
+		std::cout << "char:	impossible";
+	if (ok[1] && ((i >= 0 && f >= 0) || (i <= 0 && f <= 0)))	//int
+		std::cout << "\nint:	" << i;
+	else
+		std::cout << "\nint:	impossible";
+	if (ok[2])	//float
+		std::cout << std::setprecision(1) << std::fixed << "\nfloat:	" << f << "f";
+	else
+		std::cout << std::setprecision(1) << std::fixed << "\nfloat:	impossible";
+	if (ok[3])	//double
+		std::cout << std::setprecision(1) << std::fixed << "\ndouble:	" << d << std::endl;
+	else
+		std::cout << std::setprecision(1) << std::fixed << "\ndouble:	impossible" << std::endl;
 }
 
 void ScalarConverter::convert(std::string str) {
@@ -62,7 +87,6 @@ void ScalarConverter::convert(std::string str) {
 		f = static_cast<float>(str[0]);
 		d = static_cast<double>(str[0]);
 	}
-
 
 	//float / double
 	else if (str.find('.') != (long unsigned int)-1) {
@@ -103,7 +127,6 @@ void ScalarConverter::convert(std::string str) {
 		}
 	}
 
-
 	//int
 	else if (str.length() <= 11) {
 		int		j = 0;
@@ -122,26 +145,5 @@ void ScalarConverter::convert(std::string str) {
 		}
 	}
 
-	//print
-	if (ok[0])	//char
-	{
-		if (isprint(c) && i >= 0 && i <= 127)
-			std::cout << "char:	" << c;
-		else
-			std::cout << "char:	Non displayable";
-	}
-	else
-		std::cout << "char:	impossible";
-	if (ok[1])	//int
-		std::cout << "\nint:	" << i;
-	else
-		std::cout << "\nint:	impossible";
-	if (ok[2])	//float
-		std::cout << std::setprecision(1) << std::fixed << "\nfloat:	" << f << "f";
-	else
-		std::cout << std::setprecision(1) << std::fixed << "\nfloat:	impossible";
-	if (ok[3])	//double
-		std::cout << std::setprecision(1) << std::fixed << "\ndouble:	" << d << std::endl;
-	else
-		std::cout << std::setprecision(1) << std::fixed << "\ndouble:	impossible" << std::endl;
+	print(ok, c, i, f, d);
 }
