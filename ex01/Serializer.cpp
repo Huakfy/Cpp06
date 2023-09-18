@@ -6,7 +6,7 @@
 /*   By: mjourno <mjourno@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 12:22:22 by mjourno           #+#    #+#             */
-/*   Updated: 2023/09/18 13:41:51 by mjourno          ###   ########.fr       */
+/*   Updated: 2023/09/18 13:49:34 by mjourno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,9 @@ Serializer::~Serializer() {
 }
 
 uintptr_t	Serializer::serialize(Data* ptr) {
-	uintptr_t res = reinterpret_cast<uintptr_t>(ptr);
-	return	res;
+	return reinterpret_cast<uintptr_t>(ptr);
 }
 
 Data*	Serializer::deserialize(uintptr_t raw) {
-	Data* res = reinterpret_cast<Data*>(raw);
-	return res;
+	return reinterpret_cast<Data*>(raw);
 }

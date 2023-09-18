@@ -6,7 +6,7 @@
 /*   By: mjourno <mjourno@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 12:30:47 by mjourno           #+#    #+#             */
-/*   Updated: 2023/09/18 12:44:18 by mjourno          ###   ########.fr       */
+/*   Updated: 2023/09/18 13:51:36 by mjourno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define DATA
 
 typedef struct s_Data {
-
+	char	c;
 }	Data;
 
 #endif
