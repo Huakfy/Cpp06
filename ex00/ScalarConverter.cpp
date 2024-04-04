@@ -6,7 +6,7 @@
 /*   By: mjourno <mjourno@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 11:08:22 by mjourno           #+#    #+#             */
-/*   Updated: 2023/09/15 15:37:20 by mjourno          ###   ########.fr       */
+/*   Updated: 2023/09/25 11:05:10 by mjourno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,10 +72,10 @@ void ScalarConverter::convert(std::string str) {
 	}
 
 	bool	ok[4] = {0,0,0,0};
-	char	c;
-	int		i;
-	float	f;
-	double	d;
+	char	c = 0;
+	int		i = 0;
+	float	f = 0;
+	double	d = 0;
 
 	//exceptions
 	if (str == "-inff" || str == "-inf" || str == "+inff" || str == "+inf" || str == "nanf" || str == "nan")
